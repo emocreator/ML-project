@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from src.logger import logging
 from src.exception import CustomException
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
+from src.components.model_trainer import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
@@ -25,6 +26,7 @@ class DataIngestion:
         try:
             df = pd.read_csv(DATASET_PATH)
 
+            #df = pd.read_csv(os.path.join('C:\Users\shiva\Desktop\project_template\New-Machine-Learning-Modular-Coding-project\Data\finalTrain.csv'))
 
             os.makedirs(os.path.dirname(self.data_ingestion_config.raw_data_path), exist_ok=True)
 
@@ -54,5 +56,5 @@ if __name__ == "__main__":
     train_data_path,test_data_path=obj.iniitiate_data_ingestion()
     data_transformation = DataTransformation()
     train_arr,test_arr,_ = data_transformation.inititate_data_transformation(train_data_path,test_data_path)
-
-
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_training(train_arr, test_arr))

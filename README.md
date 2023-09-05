@@ -1,5 +1,3 @@
-# ML-project
-
 1. Firstly Create your new Environment
 
 ```conda create -p env python=3.9 -y```

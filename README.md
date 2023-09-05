@@ -73,7 +73,6 @@ This will do all the steps and generate the model file in `artifacts/model_train
 ```bash
 python prediction/batch.py
 ```
-Here are some more things I can add to the README to make it more comprehensive:
 
 ## Dataset
 

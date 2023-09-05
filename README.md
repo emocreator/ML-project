@@ -1,3 +1,7 @@
+# Delivery Time Prediction Project
+
+This is a machine learning project to predict delivery times based on various features like traffic, weather etc. It follows a modular structure for easy maintenance.
+
 1. Firstly Create your new Environment
 
 ```conda create -p env python=3.9 -y```
@@ -12,11 +16,7 @@
 
 ```pip install -r requirements.txt```
 
-Here is a README.md for the project:
 
-# Delivery Time Prediction Project
-
-This is a machine learning project to predict delivery times based on various features like traffic, weather etc. It follows a modular structure for easy maintenance.
 
 ## Project Structure
 

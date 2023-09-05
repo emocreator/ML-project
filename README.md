@@ -73,6 +73,54 @@ This will do all the steps and generate the model file in `artifacts/model_train
 ```bash
 python prediction/batch.py
 ```
+Here are some more things I can add to the README to make it more comprehensive:
+
+## Dataset
+
+The dataset used for this project is `data/finalTrain.csv`. It contains the following features:
+
+- ID: Unique ID for each row
+- Type_of_order: Online or offline order
+- Type_of_vehicle: Bike, Car etc.
+- Time_taken: Target variable, delivery time in minutes.
+
+## Data Ingestion
+
+The `data_ingestion.py` does the following:
+
+- Load data from csv file
+- Split into train and test sets
+- Save train and test csv files in the `artifacts/data_ingestion` folder.
+
+## Data Transformation 
+
+The main steps done in `data_transformation.py`:
+
+- Handle missing values
+- Encode categorical features
+- Standardize numerical columns
+- Engineer new features like distance calculation
+- Save the transformed data in `artifacts/data_transformation` folder.
+
+It also saves the preprocessing object for use during prediction.
+
+## Model Training
+
+`model_trainer.py` trains the following regression models:
+
+- XGBRegressor
+- RandomForestRegressor
+- SVM
+
+It evaluates them based on R2 score and saves the best model to `artifacts/model_trainer`.
+
+## Deployment 
+
+The model can be deployed using Flask by creating a `app.py` file that loads the model and serves predictions via an API.
+
+## Monitoring
+
+The model's performance can be monitored in production by tracking live metrics like request throughput, latency, error rates etc.
 
 ## Notes
 
@@ -80,5 +128,3 @@ python prediction/batch.py
 - Logging and exception handling is done using custom logger and exception classes.
 - Ideal for learning how modular ML projects are built.
 - Can be extended to include more components like model evaluation, deployment etc.
-
-Let me know if you would like any clarification or changes in this README!
